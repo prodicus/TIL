@@ -1,0 +1,421 @@
+/*
+
+Author : Tasdik Rahman 
+Question number 2, Tutorial week 4 :
+
+*/
+import java.util.Scanner ;
+class q2{
+	public static class Rectangle{
+		private float length, width , flag; 
+		
+		Rectangle(){		
+			// default ctor
+			length = 1 ; 
+			width = 1 ; 
+		}
+
+		void set(){
+			if( (length > 0 && width > 0) && (length < 20 && width < 20) ){
+				System.out.println("Input meets the conditions : "); 
+				flag = 1 ; 
+			}
+
+			else{
+				System.out.println("Input Does not meet the conditions :"); 
+				flag = 0 ; 
+			}
+		}
+
+		void get(){
+			Scanner user_input =  new Scanner(System.in) ; 
+			System.out.print("length : ") ;
+			length = user_input.nextFloat() ; 
+			System.out.print("width : ") ;
+			width = user_input.nextFloat() ; 
+			set() ; 		// call the function set()
+			if( flag == 1){
+				perimeter() ; 
+				area() ; 
+			}
+		}
+
+		void perimeter(){
+			System.out.println("perimeter : "+(2*(length + width))) ; 
+		}
+
+		void area(){
+			System.out.println("area : "+(length * width)) ; 
+		}
+	}
+
+	public static void main(String[] args) {
+		Rectangle object = new Rectangle() ; 
+		object.get() ; 
+	}
+}
+/*
+	-------------->>>>Output<<--------------------------
+	length : 3
+	width : 4
+	Input meets the conditions : 
+	perimeter : 14.0
+	area : 12.0
+
+	---------------------------------------------------
+	
+	length : 21
+	width : 20
+	Input Does not meet the conditions :
+	
+*/
+
+-----------------------XXXXXXXXXXXXXXX--------------------------
+
+/*
+
+Author : Tasdik Rahman 
+Question number 3, Tutorial week 4 :
+
+*/
+
+class q3{
+	
+	public static class SavingsAccount{
+
+		// to store the annual interest rate for all a/c holders
+		static int annualInterestRate   ;
+		// indicates amount the saver currently has to deposit
+		private float savingsBalance ;  		
+
+		public SavingsAccount(float var){
+			// ctor for the class Savings class 
+			savingsBalance = var ; 
+		}
+
+		void calculateMonthlyInterest(){
+			// to calculate the monthly interest 
+			float interest = (savingsBalance * annualInterestRate)/12 ; 
+			savingsBalance += interest ; 
+			System.out.println("Balance is " + savingsBalance) ; 
+		}		
+
+		static void modifyInterestRate(int rate){
+			annualInterestRate = rate ;
+		}
+	}
+
+	public static void main(String[] args) {
+		SavingsAccount saver1 = new SavingsAccount(2000) ; 
+		SavingsAccount saver2 = new SavingsAccount(3000) ;
+
+		System.out.println("when interest rate = 4 ") ; 
+		saver1.modifyInterestRate(4) ; 
+		System.out.println("------>>>Saver 1  : ") ;
+		saver1.calculateMonthlyInterest() ; 
+		System.out.println("------>>>Saver 2  : ") ;
+		saver2.calculateMonthlyInterest() ; 
+
+		System.out.println() ; 	// for better readability 
+
+		System.out.println("when interest rate = 5 ") ; 
+		saver1.modifyInterestRate(5) ; 
+		System.out.println("------>>>Saver 1  : ") ;
+		saver1.calculateMonthlyInterest() ; 
+		System.out.println("------>>>Saver 2  : ") ;
+		saver2.calculateMonthlyInterest() ; 
+ 	}
+}
+
+
+/*
+	-------------->>>>Output<<--------------------------
+
+when interest rate = 4 
+------>>>Saver 1  : 
+Balance is 2666.6667
+------>>>Saver 2  : 
+Balance is 4000.0
+
+when interest rate = 5 
+------>>>Saver 1  : 
+Balance is 3777.7778
+------>>>Saver 2  : 
+Balance is 5666.6665
+
+*/
+
+-----------------------XXXXXXXXXXXXXXX--------------------------
+
+/*
+
+Author : Tasdik Rahman 
+Question number 4, Tutorial week 4 : 
+*/
+
+class Static_class{
+	// to demonstrate static keyword
+	static int count   ; 		
+	
+	// used to store the number of objects created 
+	static{
+		System.out.println("\nInside static block !") ; 
+	}
+
+	Static_class(){
+		// ctor for the class Static
+		Static_class.count++ ;  
+	}
+
+	static void display(){
+		System.out.println("\nInside static Method !" + 
+						   "\nValue of count(no. of objects created) = " + count ) ;
+		
+	}
+}
+class q4_a{
+	public static void main(String[] args) {
+		Static_class[] obj = new Static_class[10] ; 
+		for (int i = 0 ; i < 10 ; i++ ) {
+			obj[i] = new Static_class() ; 
+		}
+
+		Static_class.display() ; 
+	}
+}
+
+/*
+	-------------->>>>Output<<--------------------------
+	Inside static block !
+
+	Inside static Method !
+
+	Value of count(no. of objects created) = 10
+*/
+
+
+-----------------------XXXXXXXXXXXXXXX--------------------------
+
+/*
+
+Author : Tasdik Rahman 
+Question number 4, Tutorial week 4 : 
+
+*/
+
+class q4_b{
+	// to demonstrate final keyword
+	public static final class Final{
+		/*
+			 AS THIS IS A FINAL CLASS EVERYTHING INSIDE THE CLASS WILL BE 
+			 FINAL BY DEFAULT 
+		*/
+		 public class MyStack {
+   private int maxSize;
+   private long[] stackArray;
+   private int top;
+   public MyStack(int s) {
+      maxSize = s;
+      stackArray = new long[maxSize];
+      top = -1;
+   }
+   public void push(long j) {
+      stackArray[++top] = j;
+   }
+   public long pop() {
+      return stackArray[top--];
+   }
+   public long peek() {
+      return stackArray[top];
+   }
+   public boolean isEmpty() {
+      return (top == -1);
+   }
+   public boolean isFull() {
+      return (top == maxSize - 1);
+   }
+   public static void main(String[] args) {
+      MyStack theStack = new MyStack(10); 
+      theStack.push(10);
+      theStack.push(20);
+      theStack.push(30);
+      theStack.push(40);
+      theStack.push(50);
+      while (!theStack.isEmpty()) {
+         long value = theStack.pop();
+         System.out.print(value);
+         System.out.print(" ");
+      }
+      System.out.println("");
+   }
+}
+		final int final_variable = 10 ; 
+
+		/*
+			---------------------
+		 	final_variable = 20 ;
+			---------------------			
+			will give an error as final_varaible can be assigned only once
+		*/	
+
+		final void method(){
+			System.out.println("Inside final method ! ") ; 
+		}
+	}
+
+	/*
+		---------------------			
+		public class subclass extends Final_class{
+			void method(){
+				System.out.print("This is illegal !") ; 
+			}
+		}
+		---------------------			
+		// will give an error as final class cannot be subclassed.
+		// and also because a final method cannot be overridden
+	*/
+
+	public static void main(String[] args) {
+		
+		Final final_object = new Final() ; 
+		final_object.method() ; 
+	
+	}
+}
+
+/*
+	-------------->>>>Output<<--------------------------
+	Inside final method ! 
+*/
+
+-----------------------XXXXXXXXXXXXXXX--------------------------
+
+/*
+
+Author : Tasdik Rahman
+Question number 5, Tutorial week 4 : 
+
+*/
+
+class q5{
+	static class demo{
+		// ----------->>>>> Ctor overloading
+		demo(){
+			// default ctor
+			System.out.println("Inside default ctor !") ; 
+		}
+		demo(int num){
+			System.out.println("Inside parameterised ctor which takes "+
+													num +
+												 " as arg !") ;
+		}
+		demo(float num){
+			System.out.println("Inside parameterised ctor which takes " +
+													num +
+													" as arg !") ;
+		}
+		// ----------->>>>>>> method overloading
+		void method(int data){
+			System.out.println("INTEGER data "+data+" is passed inside method() : ") ; 
+		}
+
+		void method(float data){
+			System.out.println("FLOAT data "+data+" is passed inside method() : ") ;
+		}
+	}
+
+	public static void main(String[] args) {
+		demo obj1 = new demo() ;   // call the default ctor	
+		demo obj2 = new demo(3) ; 	// calls the ctor with integer parameters
+		demo obj3 = new demo(5.6f) ;  // calls the ctor with float parameters
+
+		// showing method overloading
+
+		obj1.method(2) ; 		// calls the method() with integer parameters
+		obj1.method(6.6f) ; 		// calls the method() with float parameters
+	}
+}
+
+/*
+	-------------->>>>Output<<--------------------------
+	Inside default ctor !
+	Inside parameterised ctor which takes 3 as arg !
+	Inside parameterised ctor which takes 5.6 as arg !
+	INTEGER data 3 is passed inside method() : 
+	FLOAT data 5.6 is passed inside method() :
+
+*/
+
+
+-----------------------XXXXXXXXXXXXXXX--------------------------
+
+
+/*
+
+Author : Tasdik Rahman
+Question number 6, Tutorial week 4 : 
+
+*/
+class Outer{
+	int num  ; 
+	Outer(){
+		num = 10 ;
+	}
+	
+	class Inner{		
+		// this class will have access to all the methods and 
+		// variables of the Outer class 
+		void display(){
+			System.out.println("Inside the Inner class  : "
+							+ "\nValue of num inside class Outer : "
+							+ num 
+							) ; 
+		}
+	}
+
+	void display(){
+		Inner inner_obj = new Inner() ; 
+		inner_obj.display() ; 
+	}
+}
+
+class q6{
+	public static void main(String[] args) {
+		Outer outer_obj = new Outer(); 
+		outer_obj.display() ; 
+	}
+}
+
+/*
+	-------------->>>>Output<<--------------------------
+	Inside the Inner class  : 
+	Value of num inside class Outer : 10
+*/
+
+-----------------------XXXXXXXXXXXXXXX--------------------------
+
+/*
+
+Author : Tasdik Rahman
+Question number 7, Tutorial week 4 : 
+*/
+
+class q7{
+	public static void main(String[] args) {
+		float radius = Float.parseFloat(args[0]) ; 
+		System.out.println("Area : " + (3.14 * radius * radius)) ; 		
+	}
+}
+
+/*
+	-------------->>>>Input<<--------------------------
+	
+	java q7 4.5
+
+	-------------->>>>Output<<--------------------------
+	
+	Area : 63.585
+*/
+
+
+

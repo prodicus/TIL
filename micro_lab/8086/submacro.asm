@@ -1,0 +1,39 @@
+DATA SEGMENT
+msg1 DB 10,13, 'Enter the first number$'
+msg2 DB 10,13, 'Enter the second number$'
+msg3 DB 10,13, 'The difference is:$'
+DATA ENDS
+ 
+
+ASSUME CS:CODE, DS:DATA
+
+DISP MACRO msg
+MOV AX,SEG msg
+MOV DS, AX
+MOV DX, OFFSET msg
+MOV AH,09H
+INT 21H
+ENDM
+
+CODE SEGMENT
+START:
+DISP msg1
+MOV AH, 01H
+INT 21H
+SUB AL, '0'
+MOV BL, AL
+DISP msg2
+MOV AH, 01H
+INT 21H
+SUB AL, '0'
+MOV CL, AL
+SUB BL,CL
+ADD BL, '0'
+DISP msg3
+MOV DL,BL
+MOV AH,02H
+INT 21H
+MOV AX,4c00h
+INT 21H
+CODE ENDS
+END START

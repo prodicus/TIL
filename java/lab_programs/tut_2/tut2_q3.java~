@@ -1,0 +1,8 @@
+	3. Write a program to display
+	Winter : if month is Dec or Jan or Feb
+	Summer: if month is Mar or Apr or May
+	Spring: if month is Jun or Jul or Aug
+	Autumn: if month is Sep or Oct or Nov
+	
+	Hint: can use numbers to represent months like 12 means December Or enum or
+              switch with strings(feature from java7 onwards)

@@ -1,0 +1,16 @@
+		System.out.println(“2”);
+		System.out.println(“4”);
+		System.out.println(“6”);
+		System.out.println(“8”);
+		System.out.println(“10”);
+		System.out.println(“GoodBye”);
+
+1. for
+2. while 
+3. do..while 
+4. and also implement the same to print in reverse.
+
+
+public class Print{
+}
+

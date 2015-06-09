@@ -1,0 +1,6 @@
+LXI H, 5000
+MOV B, M 
+DCR B
+MOV C, M 
+DCR C
+INX H

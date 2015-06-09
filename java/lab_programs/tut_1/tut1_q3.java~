@@ -1,0 +1,28 @@
+/*
+	Name  : Tasdik Rahman 		
+	Tutorial 1, Program 3:
+
+	Apply an Object oriented paradigm using java to develop a stand alone
+	application to call a method to do the same but from another class.Hint: more than one
+	class needed. Level: Basic 
+		
+*/
+
+// creating the class which we are going to call from the main()
+class A{
+	static void method(){			
+		System.out.println("\nInside called function") ; 
+	}
+}
+
+public class tut1_q3{
+	public static void main(String[] args){
+		System.out.println("\nInside main function") ; 
+		//creating an object of class A by dynamic allocation
+		A obj = new A() ; 								
+		//calling method of the other function
+		obj.method();   
+
+		System.out.println("\nBack Inside main function\n") ; 
+	}
+}
