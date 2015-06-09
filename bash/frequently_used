@@ -1,0 +1,2 @@
+SYNTAX ::
+"find" = find * -type f -iname <file-to-be-searched> <-delete>
