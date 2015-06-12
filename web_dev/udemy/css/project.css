@@ -1,0 +1,12 @@
+body{
+	margin : 0 ;
+}
+
+#topbar{
+	background-color: #740000;
+	width: 100%;
+	height : 40px;
+	color : white;
+	font-size : 30px;	
+	padding : 20px 10px 10px 10px;
+}
