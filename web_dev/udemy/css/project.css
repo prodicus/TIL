@@ -1,12 +1,185 @@
 body{
-	margin : 0 ;
+	margin : 0;
+	font-family : Arial,Helvetica,freesans,sans-serif;
+	background-color: #DCEAF3;
+}
+/*
+.selected{
+	background-color: white ; 
+	border-bottom : 2px solid white;
+	border-top : 2.3px solid white;
+	position: relative; 
+	float : left;
+	top : -1px;
+	left: -2px;
+	height : 23px;
+	width: 115px;
+}*/
+
+.selected_text{
+	font-weight: bold;
+	color: bold !important;
+}
+
+#newsbar_menu{
+	background-color : #005383;
+	height : 35px;
+	width : 930px;
+	position: relative;
+	left : 190px;
+	top : -58.8px;
+}
+
+#newsbar_menu ul li{
+	list-style: none ;
+	color : white;
+	font-family : Arial,Helvetica,freesans,sans-serif;
+	font-weight: bold;
+	position: relative;
+	right: 24px;
+	float: left;
+	/*padding now*/
+	padding : 9px 6px 0 0 ;
+}
+
+#newsbar_menu li::before{
+	/*for the divider*/
+	content: "|" ;
+	padding : 0 10px 0 10px;
+}
+
+#newsbar_menu li:first-child:before {
+	content: none;
+}
+
+#newsbar h1{
+	position: relative ; 
+	top : 10px;
+	padding-left: 8.6px;
+	font-size : 45px;
+}
+
+#newsbar{
+	position: relative;
+	top : -43px;
+	background-color: #1790CF;
+	height :70px;
+	width : 100%;
+	color : white;
+	border-bottom: 3px solid #3399FF ;
+	border-right : 1px solid #3399FF;
+	/*background-image: url("images/background.gif");
+	background-repeat: no-repeat;	
+	background-position: 155px 1px;*/
+	/*
+	the background image is not coming in proportions 
+	will check it out later
+	*/
+}
+
+#rss{
+	float : right;
+	position: relative;
+	right: 245px;
+}
+
+.clearit{
+	clear:both;
+}
+
+
+.semi_heading{
+	/*font-weight: bold ; */
+	color : white;
+	font-size: 33px ;
+	padding-left : 7px;
+}
+
+
+#searchbar{
+	position: relative;
+	top : 11px;
+	left : 30px;
+	float :left;
+}
+
+#searchbar input {
+	width : 180px;
+	height : 22px;
+	font-weight: bold ;
+	border : none;
+	padding : 8px ;
+	background-image: url("images/search_img.png");
+	background-repeat: no-repeat;
+	background-position: 155px 1px;
+}
+
+/*for changing the color of the placholder text in the search menu bar */
+::-webkit-input-placeholder {
+   color: #1A0000;
+}
+
+#topmenu{
+	border-right : 1px solid #3399FF;
+	float : left;
+	position: relative;	
+	top : -5px;
+}
+
+#topmenu ul{
+	float :left ;
+}
+
+#topmenu li{
+	list-style: none;
+	color : white ;
+	font-weight: bold; 
+	padding : 0 27px 0 0;
+	position: relative;
+	top : 4px;
+	float : left;
+	font-size : 0.9em;
+}
+
+#logo_padding{
+	padding : 8px ;
+	float : left;
+	border-right : 1px solid #3399FF;
+	padding-right: 10px;
+}
+
+#signin img{
+	position: relative;
+	top : 13px;
+}
+
+#signin_text{
+	position: relative;
+	top :8px;
+	font-size : 0.9em;
+	font-weight: bold;
+}
+
+#signin{
+	position: relative ; 
+	padding: 10px 85px 20px 5px;
+	float : left;
+	top: -12px;
+	right : -10px;
+	border-right : 1px solid #3399FF;
+}
+
+.fixed_width{
+	height :30px;
+	width: 1000px;
+	margin : 0 auto ;
 }
 
 #topbar{
-	background-color: #740000;
-	width: 100%;
-	height : 40px;
+	background-color: #1272A4;
+	height :43px;
+	width : 100%;
 	color : white;
-	font-size : 30px;	
-	padding : 20px 10px 10px 10px;
+	border-bottom: 2px solid #3399FF ;
+	border-right : 1px solid #3399FF;
 }

@@ -1,16 +1,84 @@
-<!-- Making a front end clone of the BBC website!!! -->
+<!-- Making a front end clone of the BBC website (bbc.co.uk)!!! -->
 <!doctype>
 <html>
     <head>
         <title>BBC India</title>
         <meta charset ="utf-8">
         <link rel = "stylesheet" type = "text/css" href="project.css">
-    </head>
+    </head> 
     <body>
-    	<div id="container">
-			<div id="topbar">
-			
-			</div>
-    	</div>
+        <div id="container">
+            <!-- 
+                This is the top bar html which is a little darker
+             -->
+            <div id="topbar">
+                <div class="fixed_width">
+
+                    <div id="logo_padding">
+                        <img src="images/bbc.png">
+                    </div>
+
+                    <!-- creating the sign in div -->
+
+                    <div id="signin">
+                        <img src="images/signin_logo.png"> <span id="signin_text">Sign In</span>
+                    </div>
+
+                    <div id="topmenu">
+                        <ul>
+                            <li>News</li>
+                            <li>Sport</li>
+                            <li>Weather</li>
+                            <li>Shop</li>
+                            <li>Earth</li>
+                            <li>Travel</li> 
+                        </ul>
+                    </div>
+
+                    <div id="searchbar">
+                        <input type="text" placeholder="Search" />
+                    </div>
+                </div>
+            </div>
+            <!-- 
+                This ends the top bar div which was darker
+             -->
+             
+            <!-- 
+                Now the top bar div which is lighter in color
+            -->
+
+            <div class="clearit"></div>
+
+            <div id="newsbar">
+                <div class="fixed_width">
+                    <h1>ABOUT <span class="semi_heading">BBC iD</span></h1>        
+                </div>
+
+                <div id="rss">
+                    <img src = "images/rss.png" height = "23px" width = "23px" >
+                </div>
+
+                <div class="clearit"></div>
+
+                <!-- <div id="newsbar_menu"></div> -->
+            </div>
+            <!-- 
+              Now the top bar div which is lighter in color
+            -->
+
+            <!-- Making the third navigation bar from top -->
+            <div id="newsbar_menu">
+                <ul>
+                    <li>Introduction</li>
+                    <li>Registration</li>
+                    <li>Signing in</li>
+                    <li class="selected"><span class="selected_text">Your information</span></li>
+                    <li>BBC iD for children</li>
+                </ul>    
+            </div>
+            <!-- third navigation bar from top ends-->
+
+        </div> <!-- End of the div id "container" -->
     </body>
 </html>
