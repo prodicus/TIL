@@ -1,0 +1,25 @@
+/*adding css for the example.html file*/
+
+div{
+	height: 100px;
+	width: 100px;
+	float : left;
+	margin : 20px;
+}
+
+.red{
+	background-color: yellow  ; 
+	border : 20px violet ridge;
+	border-radius: 20px
+}
+
+.blue{ 
+	background-color: blue; 
+	border : 20px green;
+	border-style : ridge solid dotted dashed;
+}
+
+.green {
+	background-color: green ;
+	border-radius: 10px ;
+}
