@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ONGC::India</title>
+        <meta charset ="utf-8">
+        <link rel = "stylesheet" type = "text/css" href="stylesheet.css">
+
+        <style>
+            .right_content{
+                top : -30px;
+                right : 170px;
+            }
+
+            #left_content{
+                top : 8px;
+                width: 590px !important;
+            }
+
+            #searchbar input{
+                width : 164px !important;
+                height: 6px !important;
+            }        
+
+            .news_width p{
+                font-size : 15px !important; 
+            }  
+
+
+            #left_roller img{
+                height : 35px;
+                width : 35px;
+                position: relative;
+                bottom: 120px;
+                right : 18px;
+            }
+
+            #right_roller img{
+                height : 35px;
+                width : 35px;
+                position: relative;
+                bottom: 156px;
+                left : 314px;
+            }
+
+            #rolling_images{
+                height: 245px;
+                width : 330px;
+                background-color: #646464;
+                position: relative;
+                top : 20px;
+                /*left : 5px;*/
+                border-radius: 10px;
+            }
+
+        </style>
+        <!-- adding the javascript for the rolling image -->
+        <script type="text/javascript">
+            var imagecount = 1;
+            var total = 4 ;
+
+            function slide(x){
+                var Image = document.getElementById('rolling_images');
+                imagecount = imagecount + x ; 
+                if(imagecount > total){imagecount = 1;}
+                if(imagecount < 1){imagecount = total;}
+                Image.src = "images/rolling"+ imagecount + ".jpg" ;
+            }
+
+            window.setInterval(function photoA(){
+                var Image = document.getElementById('rolling_images');
+                imagecount = imagecount + 1 ; 
+                if(imagecount > total){imagecount = 1;}
+                if(imagecount < 1){imagecount = total;}
+                Image.src = "images/rolling"+ imagecount + ".jpg" ;   
+            },3000);
+        </script>
+    </head> 
+    <body>
+        <div id="container">
+            <!-- 
+                This is the top bar html which is a little darker
+             -->
+            <div id="topbar">
+                <div class="fixed_width">
+
+                    <div id="logo_padding">
+                        <a href="#"><img src="images/ongc_blue.jpg" height="37px" width="37px"></a>
+                    </div>
+
+                    <!-- creating the sign in div -->
+
+                    <div id="signin">
+                        <img src="images/signin_logo.png"><span id="signin_text"><a href="#">Sign In</a></span>
+                    </div>
+
+                    <div id="topmenu">
+                        <ul>
+                            <li class="hover_links"><a href="#">News</a></li>
+                            <li class="hover_links"><a href="#">Reports</a></li>
+                            <li class="hover_links"><a href="#">Mail</a></li>
+                            <li class="hover_links"><a href="#">Web Ice</a></li>
+                            <li class="hover_links"><a href="#">Engn. Services</a></li>
+                            <li class="hover_links"><a href="#">Intranet</a></li> 
+                        </ul>
+                    </div>
+
+                    <div id="searchbar">
+                        <input type="text" placeholder="Search" />
+                    </div>
+                </div>
+            </div>
+            <!-- 
+                This ends the top bar div which was darker
+             -->
+             
+            <!-- 
+                Now the top bar div which is lighter in color
+            -->
+
+            <div class="clearit"></div>
+
+            <div id="newsbar">
+                <div class="fixed_width">
+                    <h1>ONGC <span class="semi_heading">Working towards a better Tommorow</span></h1>       
+                </div>
+
+                <!-- <div id="rss">
+                    <img src = "images/rss.png" height = "23px" width = "23px" >
+                </div> -->
+
+                <div class="clearit"></div>
+
+                <!-- <div id="newsbar_menu"></div> -->
+            </div>
+            <!-- 
+              Now the top bar div which is lighter in color
+            -->
+
+            <!-- Making the third navigation bar from top -->
+            <div id="experiment">
+                <ul class="main-nav">
+                  <li><a href="#" class="hover_links">Home</a></li>
+                  <li><a href="pages/gallery.html" class="hover_links">Gallery</a></li>
+                  <li class="dropdown">
+                    <a href="#">Queries to DB</a>
+                    <ul class="drop-nav">
+                      <li><a href="qeuries/q1.php">All</a></li>
+                      <li class="flyout">
+                        <a href="#">Specific</a>
+                        <ul class="flyout-nav">
+                          <li><a href="#">query1</a></li>
+                          <li><a href="#">query2</a></li>
+                          <li><a href="#">query3</a></li>         
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Vision</a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                  <li><a href="#"></a></li>
+                </ul>
+            </div>
+
+            <!-- third navigation bar from top ends-->
+
+            <!-- Now comes the content part which I will be doing with the help of javascript in the next
+                 page
+             -->
+
+             <!-- ################## RIGHT Content part STARTS ############## -->
+
+             <div class="right_content">
+                 <div class="right_content_width">
+                 <!-- adding the image slider -->
+                    <h1>Gallery</h1>
+                    <div id="rolling_image_div">
+                        <img src="images/rolling1.jpg" id="rolling_images">      
+
+                        <div id="left_roller">
+                            <img onClick="slide(-1)" src="images/arrow_left.png">
+                        </div>
+
+                        <div id="right_roller">
+                            <img onClick="slide(1)" src="images/arrow_right.png">
+                        </div>
+                    </div>
+                 </div>
+             </div>
+
+             <!-- Creating the Contact US form -->
+
+             <!-- <div class="clearit"></div> -->
+
+             <div id="right_content_contact">
+                 <div class="right_content_width">
+                     <h1>Contact us</h1>
+                     <br>
+                     <p>If you haven't found the answers you need, please email us at <a href="mailto:support@ongc.co.in">support@ongc.co.in</a></p>
+                 </div>
+             </div> 
+
+             <!-- ################## RIGHT Content part ENDS ############## -->
+
+             <!-- ################### LEFT Content part ################## -->
+             <div id="left_content">
+                <div id="heading">
+                    <h1>Offshore Maintenance Group</h1>
+                </div>  
+
+                <div class="bottom_border"></div>
+
+                <div class="news">
+                    <div class="news_width">
+                        <div class="news_heading">Oil and Natural Gas Corporation</div>
+
+                        <p>Bombay High, also known as Mumbai High, is an offshore oilfield 162 kilometres (101 mi) off the coast of Mumbai, India, in about 75 m of water. The oil operations are run by India's Oil and Natural Gas Corporation (ONGC).</p>
+
+                        <p>Bombay High field was discovered by a Russian and Indian oil exploration team operating from the seismic exploration vessel Academic Arkhangelsky during mapping of the Gulf of Khambhat (earlier Cambay) in 1964-67, followed by a detailed survey in 1972. The naming of the field is attributed to a team from a survey run in 1965 analysed in the Rashmi building in Peddar Road, Cumballa Hill, Bombay. The first offshore well was sunk in 1974.</p>
+
+                        <p>Every oil resource rock requires Structural traps which are mainly salt dome, coral reefs, fault trap and fold trap. In case Bombay High, the structure is a "north-northwest to south-southeast trending doubly plunging Anticline with a faulted east limb", 65 km long and 23 km wide", and is the most probable reason to call it "Bombay High".</p>
+
+                        <p><span class="blue">REMEMBER</span> You have complete control over any information you provide. You can delete or make changes to your account whenever you like.</p>            
+
+                        <div class="bottom_border2"></div>                             
+
+                        <div class="news_heading2">Find out more</div>
+                        <br>
+                        <div class="news_heading2 blue">Registration</div>
+                        <br>
+                        <p>Learn how to register, and what to do if you're having trouble. Find out more about how to keep a secure password and username for webice.</p>                        
+                        <br>
+                        <span id = "back_to_top"><a href="#"><img src="images/top.png"></a></span>
+                    </div>
+                </div>
+             </div>      
+             <!-- ################## LEFT Content part ENDS ############## -->
+
+             <!-- <div id="footer_border"></div> -->
+
+             <!-- ################# Making the Footer ################### -->
+
+            <div class="clearit"></div>
+            <div id="footer">
+                <div id="footer_links">
+                    <ul>
+                        <li><a href="#">Terms of use</a></li>
+                        <li><a href="#">About ONGC</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+                <div id="footer_width">
+                    <span id="left_footer_content"><p>Copyright 2015 &copy Tasdik Rahman for ONGC.</p></span>
+                </div>          
+            </div>
+
+             <!-- #################    Footer ends   ###################  -->
+
+        </div> <!-- End of the div id "container" -->
+    </body>
+</html>
