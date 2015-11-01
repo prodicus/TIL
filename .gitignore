@@ -7,3 +7,6 @@
 *.jpg
 *.gif
 *.save
+
+##### Particular files 
+python/bs4/bs4_stuff/lib/*
