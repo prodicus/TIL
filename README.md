@@ -1,13 +1,3 @@
-<html>
-<head>
-</head>
-<body>
-<h1>Practice Code</h1>
-<p>Here lies the code which I dabble around in my spare time. There are imperfections in them and some can be outright ridiculous but that's the reason I have put it here right? 
-To improve upon them!</p>
+## Dabble
 
-<p>Saw something glaringly erroneous? Please don't hesistate to point it out.</p>
-
-<p>-prodicus</p>
-</body>
-<html>
+This is my code playground!
