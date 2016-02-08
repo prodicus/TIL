@@ -5,7 +5,6 @@ class file_write{
 		BufferedWriter out ;
 		try{
 			out = new BufferedWriter(new FileWriter("old_text.txt"));
-			out.write("I love nidhi mahanta") ; 
 			out.write("\nWanna know more ! \n");
 			out.close();
 		}catch(IOException e){}
