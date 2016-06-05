@@ -1,4 +1,7 @@
-#### joe made this: http://goel.io/joe
+
+#### Vagrant dotfiles
+
+.vagrant/
 
 *.class
 *.txt
