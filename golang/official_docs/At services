@@ -1,0 +1,12 @@
+At services
+
+- /etc/init.d/openresty start
+
+    Delete any of the log file errors
+
+    $ rm -rf /var/www/dev/logs/nginx.pid
+
+
+- Stop memcached service for the messages to pass around the campaign
+
+    /etc/init.d/memcached stop
