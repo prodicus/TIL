@@ -9,9 +9,6 @@ CREATE TABLE person(
 );
 INSERT INTO "person" VALUES(0,'tasdik','rahman',20);
 INSERT INTO "person" VALUES(1,'farhad','rahman',25);
-INSERT INTO "person" VALUES(2,'nidhi','mahanta',19);
-INSERT INTO "person" VALUES(3,'rhyma','hussain',30);
-INSERT INTO "person" VALUES(4,'vidhi','mahanta',24);
 CREATE TABLE pet(
  id INTEGER PRIMARY KEY, 
  name TEXT, 

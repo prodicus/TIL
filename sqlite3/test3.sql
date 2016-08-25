@@ -9,9 +9,6 @@ CREATE TABLE person(
 , dead INTEGER, phone_number INTEGER, salary FLOAT, dob DATETIME);
 INSERT INTO "person" VALUES(0,'tasdik','rahman',20,0,9929,123123.0,'2015-12-09');
 INSERT INTO "person" VALUES(1,'farhad','rahman',25,0,12,123123.0,'2004-12-11');
-INSERT INTO "person" VALUES(2,'nidhi','mahanta',19,0,12,123123.0,'2005-12-11');
-INSERT INTO "person" VALUES(3,'rhyma','hussain',30,0,12,123123.0,'2002-12-11');
-INSERT INTO "person" VALUES(4,'vidhi','mahanta',24,0,12,123123.0,'2001-12-11');
 CREATE TABLE pet(
  id INTEGER PRIMARY KEY, 
  name TEXT, 

@@ -136,3 +136,4 @@ docs/_build/
 # PyBuilder
 target/
 
+/java/revisiting_java/hello_world_app/nbproject/private/
