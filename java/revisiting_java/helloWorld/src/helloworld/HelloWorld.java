@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hello_world_app;
+package helloworld;
 
 /**
  *
  * @author tasdik
  */
-public class HelloWorldApp {
+public class HelloWorld {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Hello there");
     }
     
 }
